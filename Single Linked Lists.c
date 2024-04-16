@@ -4,6 +4,7 @@
 //function prototypes
 void append();
 int length();
+void appendAtStart();
 
 //linked list definition
 struct node {
@@ -50,3 +51,17 @@ int length(){
     return count;
 }
 
+void appendAtStart(){
+    struct node* temp;
+    temp = (struct node *)malloc(sizeof(struct node));
+    printf("Enter node data: ");
+    scanf("%d", &temp -> data);
+    temp -> link = NULL;
+    if(root == NULL){
+        root = temp;
+    }
+    else{
+        temp -> link = root;
+        root = temp;
+    }
+}
