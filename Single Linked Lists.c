@@ -65,3 +65,17 @@ void appendAtStart(){
         root = temp;
     }
 }
+
+void appendAfter(){
+    struct node* temp;
+    int loc, len;
+    printf("Enter Location: ");
+    scanf("%d", &loc);
+    len = length();
+    if(loc > len){
+        printf("Invalid Location \n");
+    }
+    else{
+
+    }
+}
