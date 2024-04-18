@@ -67,8 +67,8 @@ void appendAtStart(){
 }
 
 void appendAfter(){
-    struct node* temp;
-    int loc, len;
+    struct node* temp, *p;
+    int loc, len, i = 1;
     printf("Enter Location: ");
     scanf("%d", &loc);
     len = length();
@@ -76,6 +76,13 @@ void appendAfter(){
         printf("Invalid Location \n");
     }
     else{
-
+        p = root;
+        while (i < loc){
+            p = p -> link;
+            i++;
+        }
+        temp = (struct node*)malloc(sizeof(struct node));
+        temp -> link = p -> link;
+        p -> link = temp;
     }
 }
