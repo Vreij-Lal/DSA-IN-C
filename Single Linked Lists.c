@@ -86,3 +86,31 @@ void appendAfter(){
         p -> link = temp;
     }
 }
+
+void deleteNode(){
+    struct node *temp;
+    int loc;
+    printf("enter location to delete: ");
+    scanf("%d", &loc);
+    if(loc > length()){
+        printf("Invalid Location");
+    }
+    else if (loc == 1){
+        temp = root;
+        root = temp -> link;
+        temp -> link = NULL;
+        free(temp);
+    }
+    else{
+        struct node * p =root *q;
+        int i = 1;
+        while(i < loc - 1){
+            p = p -> link;
+            i++;
+        }
+        q = p -> link;
+        p -> link = q -> link;
+        q -> link = NULL;
+        free(q);
+    }
+}
