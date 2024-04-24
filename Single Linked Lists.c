@@ -5,6 +5,8 @@
 void append();
 int length();
 void appendAtStart();
+void appendAfter();
+void deleteNode();
 
 //linked list definition
 struct node {
@@ -102,7 +104,7 @@ void deleteNode(){
         free(temp);
     }
     else{
-        struct node * p =root *q;
+        struct node * p = root, *q;
         int i = 1;
         while(i < loc - 1){
             p = p -> link;
