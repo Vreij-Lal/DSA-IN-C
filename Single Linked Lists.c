@@ -7,6 +7,7 @@ int length();
 void appendAtStart();
 void appendAfter();
 void deleteNode();
+void swap ();
 
 //linked list definition
 struct node {
@@ -115,4 +116,32 @@ void deleteNode(){
         q -> link = NULL;
         free(q);
     }
+}
+
+void swap(void)
+{
+    struct node* p,*q,*r;
+    int loc,i=1;
+
+    printf("Enter location: ");
+    scanf("%d",&loc);
+    if(loc>length())
+    {
+        printf("invalid input\n\n");
+    }
+    else
+    {
+        p=root;
+        while(i<loc-1)
+        {
+            p=p->link;
+            i++;
+        }
+        q=p->link;
+        r=q->link;
+    }
+    q->link=r->link;
+    r->link=q;
+    p->link=r;
+
 }
