@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 void append();
+int length();
 
 //linked list definition
 struct node {
@@ -44,3 +45,13 @@ void append(){
 
 }
 
+int length(){
+    int i = 0;
+    struct node *p;
+    p = root;
+    while(p != null){
+        p = p -> link;
+        i++;
+    }
+    return i;
+}
