@@ -3,6 +3,7 @@
 
 void append();
 int length();
+void AddAtStart();
 
 //linked list definition
 struct node {
@@ -54,4 +55,19 @@ int length(){
         i++;
     }
     return i;
+}
+
+void AddAtStart(){
+    struct node * temp;
+    temp = (struct node*)malloc(sizeof(struct node));
+    printf("enter value:");
+    scanf("%d", &temp -> data);
+    temp -> link = NULL;
+    if(root == NULL){
+        root = temp;
+    }
+    else{
+        temp -> link = root;
+        root = temp;
+    }
 }
