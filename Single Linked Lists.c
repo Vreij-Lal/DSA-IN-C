@@ -96,3 +96,18 @@ void AddAfter(){
     }
 
 }
+
+void display(){
+    if(root == NULL){
+        printf("list is empty");
+    }
+    else{
+        struct node *p;
+        p = root;
+        while(p != NULL){
+            printf("%d", p -> data);
+            p = p -> link;
+        }
+    }
+
+}
