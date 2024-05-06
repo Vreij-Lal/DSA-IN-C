@@ -3,8 +3,9 @@
 
 void append();
 int length();
-void AddAtStart();
-void AddAfter();
+void addAtStart();
+void addAfter();
+void remove();
 
 //linked list definition
 struct node {
@@ -58,7 +59,7 @@ int length(){
     return i;
 }
 
-void AddAtStart(){
+void addAtStart(){
     struct node * temp;
     temp = (struct node*)malloc(sizeof(struct node));
     printf("enter value:");
@@ -73,7 +74,7 @@ void AddAtStart(){
     }
 }
 
-void AddAfter(){
+void addAfter(){
     struct node *temp, *p;
     int loc, i = 1;
     printf("enter location:\n");
@@ -110,4 +111,36 @@ void display(){
         }
     }
 
+}
+
+void remove(){
+    int loc;
+    printf("enter location:");
+    scanf("%d" &loc);
+
+    if(loc > length()){
+        printf("invalid location");
+    }
+
+    if(loc == 1){
+        struct node *p;
+        p = root;
+        root = p -> link;
+        p -> link = NULL;
+        free(p);
+    }
+    else{
+        struct node *temp, *q;
+        int i = 1;
+        temp = root;
+        while(i < loc - 1){
+            temp = temp -> link;
+            i++;
+        }
+        q = temp -> link;
+        temp -> link = q -> link;
+        q -> link = NULL;
+        free(q);
+
+    }
 }
