@@ -3,6 +3,7 @@
 
 //function prototypes
 void push();
+void pop();
 
 //linked list definition
 struct node {
@@ -24,4 +25,17 @@ void push(){
     scanf("%d", &temp -> data);
     temp -> link = top;
     top = temp;
+}
+
+void pop(){
+    struct node* temp;
+    if(temp == NULL){
+        printf("no elements in the stack\n"));
+    }
+    else{
+        temp = top;
+        top = top -> link;
+        temp -> link = NULL;
+        free(temp);
+    }
 }
