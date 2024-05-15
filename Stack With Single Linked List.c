@@ -4,6 +4,7 @@
 //function prototypes
 void push();
 void pop();
+void traverse();
 
 //linked list definition
 struct node {
@@ -30,12 +31,26 @@ void push(){
 void pop(){
     struct node* temp;
     if(temp == NULL){
-        printf("no elements in the stack\n"));
+        printf("no elements in the stack\n");
     }
     else{
         temp = top;
         top = top -> link;
         temp -> link = NULL;
         free(temp);
+    }
+}
+
+void traverse(){
+    struct node *temp;
+    if(top == NULL){
+        printf("no elements to traverse");
+    }
+    else{
+        temp = top;
+        while (temp != NULL){
+            printf("%d", temp -> data);
+            temp = temp -> link;
+        }
     }
 }
