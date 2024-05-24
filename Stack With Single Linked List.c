@@ -30,7 +30,7 @@ void push(){
 
 void pop(){
     struct node* temp;
-    if(temp == NULL){
+    if(top == NULL){
         printf("no elements in the stack\n");
     }
     else{
