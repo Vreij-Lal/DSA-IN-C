@@ -39,3 +39,14 @@ void traverse(){
         }
     }
 }
+
+void pop(){
+    if(front == rear){
+        printf("no elements to print");
+    }
+    else{
+        for(int i = 0; i < CAPACITY; i++){
+            queue[i] = queue[i + 1];
+        }
+    }
+}
