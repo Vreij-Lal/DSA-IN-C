@@ -28,3 +28,14 @@ void insert(){
         rear++;
     }
 }
+
+void traverse(){
+    if(front == rear){
+        printf("no items to print");
+    }
+    else{
+        for(int i = front; i < rear; i++){
+            printf("%d", queue[i]);
+        }
+    }
+}
