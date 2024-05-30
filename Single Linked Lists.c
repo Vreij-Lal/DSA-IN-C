@@ -6,6 +6,7 @@ int length();
 void addAtStart();
 void addAfter();
 void del();
+void reverse();
 
 //linked list definition
 struct node {
