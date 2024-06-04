@@ -32,7 +32,8 @@ void main(){
         printf("4.length\n");
         printf("5.Display\n");
         printf("6.Delete\n");
-        printf("7.Quit\n");
+        printf("7.Reverse");
+        printf("8.Quit\n");
         scanf("%d", &choice);
 
         switch(choice){
@@ -61,6 +62,10 @@ void main(){
                 del();
                 break;
             case 7:
+                system("cls");
+                reverse();
+                break;
+            case 8:
                 exit(1);
             default:
                 system("cls");
@@ -184,5 +189,27 @@ void del(){
         q -> link = NULL;
         free(q);
 
+    }
+}
+
+void reverse(){
+    struct node *p, *q;
+    int i, j, len, temp;
+    len = length();
+    i = 0;
+    j - len - 1;
+    while(i < j){
+        int k = 0;
+        while(k < j){
+            q = q -> link;
+            k++;
+        }
+        temp = p -> data;
+        p -> data = q -> data;
+        q -> data = temp;
+        i++;
+        j--;
+        p = p -> link;
+        q = root;
     }
 }
