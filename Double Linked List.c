@@ -10,6 +10,7 @@ struct node {
 struct node *root = NULL;
 
 void append();
+int length();
 
 void main(){
 
@@ -34,4 +35,15 @@ void append(){
         p -> right = temp;
         temp -> left = p;
     }
+}
+
+int length(){
+    int count = 0;
+    struct node *temp;
+    temp = root;
+    while(temp->right != NULL){
+        temp = temp->right;
+        count++;
+    }
+    return count;
 }
