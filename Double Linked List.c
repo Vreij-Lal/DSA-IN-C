@@ -61,3 +61,20 @@ void display(){
         }   
     } 
 }
+
+void appendAtStart(){
+    struct node *temp;
+    temp = (struct node *)malloc(sizeof(struct node));
+    printf("enter value:");
+    scanf("%d", &temp -> data);
+    temp -> right = NULL;
+    temp -> left == NULL;
+    if(root == NULL){
+        root = temp;
+    }
+    else{
+        temp -> right = root;
+        root -> left = temp;
+        root = temp;
+    }
+}
