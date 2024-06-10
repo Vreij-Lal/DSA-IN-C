@@ -47,3 +47,17 @@ int length(){
     }
     return count;
 }
+
+void display(){
+    struct node *temp;
+    temp = root;
+    if(temp == NULL){
+        printf("Stack is empty");
+    }
+    else{
+        while(temp -> right != NULL){
+        printf("%d", temp -> data);
+        temp = temp -> right;
+        }   
+    } 
+}
