@@ -78,3 +78,30 @@ void appendAtStart(){
         root = temp;
     }
 }
+
+void appendAfter(){
+    int len, position, i = 1;
+    struct node *temp, *p;
+    len = length();
+    printf("enter number of postition to add after:");
+    scanf("%d", &position);
+    if(position > len){
+        printf("invalid position");
+    }
+    else{
+        temp = (struct node *)malloc(sizeof(struct node));
+        printf("Enter value");
+        scanf("%d", &temp->data);
+        temp -> left = NULL;
+        temp -> right = NULL;
+        p = root;
+        while(i < position){
+            p = p -> right;
+            i++;
+        }
+        temp -> right = p -> right;
+        p -> right -> left = temp;
+        temp -> left = p;
+        p -> right = temp;
+    }
+}
