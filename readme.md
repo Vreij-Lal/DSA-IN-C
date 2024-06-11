@@ -6,3 +6,6 @@ This repository contains a variety of data structures and algorithms implemented
 🎉 Exciting Updates Ahead! 🎉
 
 I'm actively working on adding new data structures and algorithms every day to this repository. If you find this project helpful or interesting, make sure to star this repo ⭐ to stay updated with the latest additions and improvements. Your support keeps me motivated and helps the community grow! Let's learn and build together! 💪
+
+##License
+[MIT License](LICENSE)
